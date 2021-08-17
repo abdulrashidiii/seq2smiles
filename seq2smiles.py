@@ -64,12 +64,12 @@ def where(seq, n):
 def read_connect(C_num, disul_connect):
   str_format = [0] * C_num
   conns = disul_connect.split(',')
+  idx = 9
   for conn in conns:
-    idx = 9
     conn = conn.split('-')
     for i in conn:
       str_format[int(i)-1] = idx
-      idx = idx - 1
+    idx = idx - 1
 
   return tuple(str_format)
 
